@@ -3,8 +3,7 @@ var pipe = document.querySelector('.pipe');
 var clouds = document.querySelector('.clouds');
 var game_over_screen = document.querySelector('.game-over-screen');
 var points = +document.querySelector('.points').textContent;
-console.log(points);
-console.log(points+2)
+
 const jump = () => {
     mario.classList.add('jump'); 
 
@@ -26,8 +25,6 @@ const loop = setInterval(() =>{
     var pipeposition = pipe.offsetLeft;
     var marioposition = +window.getComputedStyle(mario).bottom.replace('px', '');
     var cloudsposition = clouds.offsetLeft;
-
-    console.log(pipeposition);
 
     if(pipeposition <= 81 && pipeposition > 0   && marioposition <= 73){
         pipe.style.animation = 'none';
