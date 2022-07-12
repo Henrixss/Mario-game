@@ -1,0 +1,251 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: darkslateblue;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.screen-border{
+    background-color: rgb(17, 17, 17);
+    border-top: 35px solid rgb(17, 17, 17);
+    border-left: 20px solid rgb(17, 17, 17);
+    border-right: 20px solid rgb(17, 17, 17);
+    border-bottom: 25px solid rgb(17, 17, 17);
+    border-radius: 50% 50% 50% 50% / 5% 5% 10% 10% ;
+}
+
+.console-name{
+    display: block;
+    text-align: center;
+    padding-top: 25px;
+    color: whitesmoke;
+    font-size: x-large;
+    font-style: italic;
+}
+
+.game-screen{
+    background-image: linear-gradient(to bottom, #8bd8d5, #9adddb, #a9e2e0, #b8e7e6, #c6eceb);
+    position: relative;
+    border: 2px solid gray;
+    border-bottom: 8px solid green;
+    border-radius: 6px;
+    width: 700px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.pipe{
+    position: absolute;
+    bottom: 0;
+    width: 60px;
+    
+    animation: pipe-animation 1.5s infinite linear;
+}
+
+.mario{
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+}
+
+.jump{
+    animation: jump 500ms infinite ease-out;
+}
+
+.clouds{
+    position: absolute;
+    width: 300px;
+    animation: clouds-animation 20s infinite linear;
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -60px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump{
+    0%{
+        bottom: 0;
+    }
+
+    40%{
+        bottom: 130px;
+    }
+    
+    50%{
+        bottom: 130px;
+    }
+
+    60%{
+        bottom: 130px;
+    }
+
+    100%{
+        bottom: 0px;
+    }
+}
+
+@keyframes clouds-animation{
+    from{
+        right: -300px;
+    }
+
+    to{
+        right: 100%;
+    }
+}
+
+.score{
+    position: absolute;
+    font-size: x-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    top: 10px;
+    left: 10px;
+    color: whitesmoke;
+    text-shadow: 0 0 10px rgb(41, 43, 41);
+}
+
+.game-over-screen{
+    position: absolute;
+    width: 200px;
+    right: 250px;
+    top: 35%;
+    text-align: center;
+    border: 2px solid darkslategrey;
+    display: none;
+}
+
+.retry-button{
+    font-size: large;
+    text-decoration: none;
+}
+
+.left-controls-div{
+    width: 240px;
+    height: 200px;
+    margin-right: 40px;
+}
+
+.right-controls-div{
+    width: 240px;
+    height: 200px;
+    margin-left: 40px;
+}
+
+.dpad-grid-container{
+    display: grid;
+    grid-template-columns: 66px 66px 66px;
+    grid-template-rows: 66px 66px 66px;
+    width: 200px;
+    height: 200px;
+}
+
+.dpad-grid-item{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.removed{
+    border: 0px solid transparent;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/*codigo copiado*/
+.arrow {
+    fill: rgb(41, 43, 41);
+    stroke: rgb(41, 43, 41);
+    stroke-width: 60;
+}
+/*codigo copiado*/
+
+.dpadup{
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.dpadleft{
+    /*virando a seta para a esquerda*/
+    transform: rotate(270deg);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.dpadrigth{
+    /*virando a seta para a direita*/
+    transform: rotate(90deg);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.dpaddown{
+    /*virando a seta para a baixo*/
+    transform: rotate(180deg);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.dpadcenter{
+    fill: rgb(41, 43, 41);
+}
+
+.buttons-grid-container{
+    display: grid;
+    grid-template-columns: 100px 100px;
+    grid-template-rows: 100px 100px;
+    width: 200px;
+    height: 200px;
+    margin-left: 40px;
+}
+
+.buttons-grid-item{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    height: 70px;
+    width: 70px;
+    font-size: xx-large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(41, 43, 41);;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    display: inline-block;
+    padding-top: 20px;
+    padding-right: 10px;
+}
+
+.start-select-container{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.sound-gaps{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
